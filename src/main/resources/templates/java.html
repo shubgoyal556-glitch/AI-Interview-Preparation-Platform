@@ -1,9 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Java Questions</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
+
 <h1>Java Interview Questions</h1>
+
+<div th:each="question : ${questions}" class="question-card">
+
+    <h3 th:text="${question.questionText}"></h3>
+
+    <p>
+        <strong>Answer:</strong>
+        <span th:text="${question.answer}"></span>
+    </p>
+
+</div>
+
 </body>
 </html>

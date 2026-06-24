@@ -9,10 +9,6 @@ public class HomeController {
     public String home() {
         return "index";
    }
-    @GetMapping("/java")
-    public String javaPage() {
-        return "java";
-    }
 
     @GetMapping("/dsa")
     public String dsaPage() {
