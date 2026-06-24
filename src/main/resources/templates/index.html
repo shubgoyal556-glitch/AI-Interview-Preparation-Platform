@@ -1,15 +1,65 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>AI Interview Preparation Platform</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
+
 <body>
 
-<h1>Welcome Shubham 🚀</h1>
+<nav>
+    <h2>AI Interview Preparation Platform</h2>
 
-<h2>AI Interview Preparation Platform</h2>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/java">Java</a></li>
+        <li><a href="/dsa">DSA</a></li>
+        <li><a href="/dbms">DBMS</a></li>
+        <li><a href="/os">OS</a></li>
+        <li><a href="/oops">OOPs</a></li>
+    </ul>
+</nav>
 
-<p>Spring Boot + MySQL is working successfully.</p>
+<section class="hero">
+    <h1>Prepare for Technical Interviews</h1>
+
+    <p>
+        Practice questions from Java, DSA, DBMS,
+        Operating Systems and OOPs.
+    </p>
+
+    <a href="/java">
+        <button>Start Practicing</button>
+    </a>
+</section>
+
+<section class="categories">
+
+    <div class="card">
+        <h3>Java</h3>
+    </div>
+
+    <div class="card">
+        <h3>DSA</h3>
+    </div>
+
+    <div class="card">
+        <h3>DBMS</h3>
+    </div>
+
+    <div class="card">
+        <h3>OS</h3>
+    </div>
+
+    <div class="card">
+        <h3>OOPs</h3>
+    </div>
+
+</section>
+
+<footer>
+    Built with Spring Boot and MySQL
+</footer>
 
 </body>
 </html>
