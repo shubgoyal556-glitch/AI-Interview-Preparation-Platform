@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Select Subject</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="logo">
+        AI Interview Preparation Platform
+    </div>
+
+    <ul class="nav-links">
+        <li><a th:href="@{/}">Home</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+    <h1>Select a Subject</h1>
+    <p>Choose a subject to start practicing interview questions.</p>
+</section>
+
+<div class="cards-container">
+
+    <a th:href="@{/java}" class="card">
+        <h2>Java</h2>
+    </a>
+
+    <a th:href="@{/dsa}" class="card">
+        <h2>DSA</h2>
+    </a>
+
+    <a th:href="@{/dbms}" class="card">
+        <h2>DBMS</h2>
+    </a>
+
+    <a th:href="@{/os}" class="card">
+        <h2>Operating System</h2>
+    </a>
+
+    <a th:href="@{/oops}" class="card">
+        <h2>OOPs</h2>
+    </a>
+
+</div>
+
+</body>
+</html>

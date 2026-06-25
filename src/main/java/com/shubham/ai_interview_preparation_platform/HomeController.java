@@ -5,28 +5,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class HomeController {
+
     @GetMapping("/")
     public String home() {
         return "index";
-   }
-
-    @GetMapping("/dsa")
-    public String dsaPage() {
-        return "dsa";
     }
 
-    @GetMapping("/dbms")
-    public String dbmsPage() {
-        return "dbms";
+    @GetMapping("/subjects")
+    public String subjectsPage() {
+        return "subjects";
     }
 
-    @GetMapping("/os")
-    public String osPage() {
-        return "os";
-    }
-
-    @GetMapping("/oops")
-    public String oopsPage() {
-        return "oops";
-    }
 }

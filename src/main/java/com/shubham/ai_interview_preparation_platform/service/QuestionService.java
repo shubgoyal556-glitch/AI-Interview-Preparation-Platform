@@ -18,6 +18,15 @@ public class QuestionService {
     }
 
     public List<Question> getQuestionsByCategory(String category) {
-        return questionRepository.findByCategory(category);
+
+        List<Question> questions = questionRepository.findByCategory(category);
+
+        System.out.println("Category = " + category);
+        System.out.println("Questions found = " + questions.size());
+
+        return questions;
+    }
+    public Question saveQuestion(Question question) {
+        return questionRepository.save(question);
     }
 }

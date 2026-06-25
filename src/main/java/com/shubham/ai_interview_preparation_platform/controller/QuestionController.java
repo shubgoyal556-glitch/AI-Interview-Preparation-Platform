@@ -22,4 +22,47 @@ public class QuestionController {
 
         return "java";
     }
-}
+        @GetMapping("/dsa")
+        public String dsaQuestions(Model model) {
+
+            model.addAttribute(
+                    "questions",
+                    questionService.getQuestionsByCategory("DSA")
+            );
+
+            return "dsa";
+        }
+
+        @GetMapping("/dbms")
+        public String dbmsQuestions(Model model) {
+
+            model.addAttribute(
+                    "questions",
+                    questionService.getQuestionsByCategory("DBMS")
+            );
+
+            return "dbms";
+        }
+
+        @GetMapping("/os")
+        public String osQuestions(Model model) {
+
+            model.addAttribute(
+                    "questions",
+                    questionService.getQuestionsByCategory("OS")
+            );
+
+            return "os";
+        }
+
+        @GetMapping("/oops")
+        public String oopsQuestions(Model model) {
+
+            model.addAttribute(
+                    "questions",
+                    questionService.getQuestionsByCategory("OOPs")
+            );
+
+            return "oops";
+        }
+    }

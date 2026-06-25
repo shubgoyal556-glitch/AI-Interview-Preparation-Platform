@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>AI Interview Preparation Platform</title>
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
@@ -17,6 +17,7 @@
         <li><a href="/dbms">DBMS</a></li>
         <li><a href="/os">OS</a></li>
         <li><a href="/oops">OOPs</a></li>
+        <li><a href="/add-question">Admin</a></li>
     </ul>
 </nav>
 
@@ -28,32 +29,32 @@
         Operating Systems and OOPs.
     </p>
 
-    <a href="/java">
+    <a th:href="@{/subjects}">
         <button>Start Practicing</button>
     </a>
 </section>
 
 <section class="categories">
 
-    <div class="card">
+    <a href="/java" class="card">
         <h3>Java</h3>
-    </div>
+    </a>
 
-    <div class="card">
+    <a href="/dsa" class="card">
         <h3>DSA</h3>
-    </div>
+    </a>
 
-    <div class="card">
+    <a href="/dbms" class="card">
         <h3>DBMS</h3>
-    </div>
+    </a>
 
-    <div class="card">
+    <a href="/os" class="card">
         <h3>OS</h3>
-    </div>
+    </a>
 
-    <div class="card">
+    <a href="/oops" class="card">
         <h3>OOPs</h3>
-    </div>
+    </a>
 
 </section>
 

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Question</title>
+</head>
+<body>
+
+<h1>Add Interview Question</h1>
+
+<form action="/save-question" method="post">
+
+    <label>Category:</label>
+    <input type="text" name="category">
+    <br><br>
+
+    <label>Question:</label>
+    <input type="text" name="questionText">
+    <br><br>
+
+    <label>Answer:</label>
+    <textarea name="answer"></textarea>
+    <br><br>
+
+    <button type="submit">Save Question</button>
+
+</form>
+
+</body>
+</html>
