@@ -1,66 +1,352 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>AI Interview Preparation Platform</title>
+    <title>AI Prep | Ace Every Interview with Confidence</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
 
-<nav>
-    <h2>AI Interview Preparation Platform</h2>
+<nav class="navbar">
 
-    <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/java">Java</a></li>
-        <li><a href="/dsa">DSA</a></li>
-        <li><a href="/dbms">DBMS</a></li>
-        <li><a href="/os">OS</a></li>
-        <li><a href="/oops">OOPs</a></li>
-        <li><a href="/add-question">Admin</a></li>
+    <div class="logo">
+        <h2>🤖 AI Prep</h2>
+        <span>AI Interview Preparation Platform</span>
+    </div>
+
+    <ul class="nav-links">
+
+        <li><a href="#features">Features</a></li>
+        <li><a href="#roadmap">Roadmap</a></li>
+        <li><a href="#companies">Companies</a></li>
+        <li><a href="#about">About</a></li>
+
+        <li>
+            <a href="/login" class="login-btn">
+                Login
+            </a>
+        </li>
+
     </ul>
+
 </nav>
 
 <section class="hero">
-    <h1>Prepare for Technical Interviews</h1>
 
-    <p>
-        Practice questions from Java, DSA, DBMS,
-        Operating Systems and OOPs.
+    <div class="hero-left">
+        <div class="hero-badge">
+
+            🚀 Trusted by Future Software Engineers
+
+        </div>
+
+        <h1>
+            Ace Every Interview with Confidence
+        </h1>
+
+        <p>
+
+            AI Prep helps students prepare for technical interviews
+            with company-wise questions, structured roadmaps,
+            mock interviews, and AI-powered learning.
+
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="/login">
+                <button class="primary-btn">
+                    Start Learning
+                </button>
+            </a>
+
+            <a href="#features">
+                <button class="secondary-btn">
+                    Explore Features
+                </button>
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="hero-right">
+
+        <div class="hero-placeholder">
+
+            <div class="dashboard-top">
+
+                🤖 AI Interview Coach
+
+            </div>
+
+            <div class="score">
+
+                <h1>92%</h1>
+
+                <p>Resume Score</p>
+
+            </div>
+
+            <div class="progress-box">
+
+                Java Progress
+
+                <div class="progress">
+
+                    <div class="progress-fill"></div>
+
+                </div>
+
+            </div>
+
+            <button class="mock-btn">
+
+                Start Mock Interview
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+<section class="stats">
+
+    <div class="stat-card">
+        <h2>500+</h2>
+        <p>Interview Questions</p>
+    </div>
+
+    <div class="stat-card">
+        <h2>5</h2>
+        <p>Subjects</p>
+    </div>
+
+    <div class="stat-card">
+        <h2>20+</h2>
+        <p>Companies</p>
+    </div>
+
+    <div class="stat-card">
+        <h2>AI</h2>
+        <p>Powered Learning</p>
+    </div>
+
+</section>
+<section id="features" class="features">
+
+    <h2>Why Choose AI Prep?</h2>
+    <p class="section-subtitle">
+        Everything you need to prepare for technical interviews in one place.
     </p>
 
-    <a th:href="@{/subjects}">
-        <button>Start Practicing</button>
-    </a>
+    <div class="cards-container">
+
+        <div class="card">
+
+            <div class="card-icon">📚</div>
+
+            <h3>Structured Learning</h3>
+
+            <p>
+                Follow a guided roadmap from Java fundamentals to mock interviews
+                instead of studying randomly.
+            </p>
+
+            <a href="/subjects" class="card-link">
+                Start Learning →
+            </a>
+
+
+        </div>
+
+        <div class="card">
+
+            <div class="card-icon">🏢</div>
+
+            <h3>Company-wise Preparation</h3>
+
+            <p>
+                Practice interview questions from top companies like Amazon,
+                Google, Microsoft, Adobe and more.
+            </p>
+
+            <a href="/companies" class="card-link">
+                Explore Companies →
+            </a>
+
+        </div>
+
+        <div class="card">
+
+            <div class="card-icon">🤖</div>
+
+            <h3>AI Powered Features</h3>
+
+            <p>
+                Get AI mock interviews, resume reviews and personalized
+                learning recommendations.
+            </p>
+
+            <a href="/login" class="card-link">
+                Try AI Features →
+            </a>
+
+        </div>
+
+    </div>
+
 </section>
+<section id="roadmap" class="roadmap">
 
-<section class="categories">
+    <h2>Your Interview Journey</h2>
 
-    <a href="/java" class="card">
-        <h3>Java</h3>
-    </a>
+    <p class="section-subtitle">
+        A structured path from beginner to placement-ready.
+    </p>
 
-    <a href="/dsa" class="card">
-        <h3>DSA</h3>
-    </a>
+    <div class="timeline">
 
-    <a href="/dbms" class="card">
-        <h3>DBMS</h3>
-    </a>
+        <div class="timeline-item">
+            <div class="circle">1</div>
+            <h3>Java</h3>
+            <p>Master Java fundamentals and OOP concepts.</p>
+        </div>
 
-    <a href="/os" class="card">
-        <h3>OS</h3>
-    </a>
+        <div class="line"></div>
 
-    <a href="/oops" class="card">
-        <h3>OOPs</h3>
-    </a>
+        <div class="timeline-item">
+            <div class="circle">2</div>
+            <h3>DSA</h3>
+            <p>Learn problem solving and coding patterns.</p>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="timeline-item">
+            <div class="circle">3</div>
+            <h3>Core CS</h3>
+            <p>DBMS, Operating Systems and Networking.</p>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="timeline-item">
+            <div class="circle">4</div>
+            <h3>AI Mock</h3>
+            <p>Practice interviews with AI.</p>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="timeline-item">
+            <div class="circle">5</div>
+            <h3>Placement</h3>
+            <p>Become interview ready.</p>
+        </div>
+
+    </div>
+
+</section>
+<section id="companies" class="companies">
+
+    <h2>Prepare for Top Tech Companies</h2>
+
+    <p class="section-subtitle">
+        Explore interview questions based on the hiring patterns of leading companies.
+    </p>
+
+    <div class="company-grid">
+
+        <div class="company-card">
+
+            <h3>🟧 Amazon</h3>
+
+            <span class="difficulty hard">★★★★☆</span>
+
+            <p><strong>Focus:</strong></p>
+
+            <ul>
+                <li>Java</li>
+                <li>DSA</li>
+                <li>OOP</li>
+                <li>DBMS</li>
+            </ul>
+
+            <p class="question-count">150+ Questions</p>
+
+            <a href="#" class="company-btn">Explore →</a>
+
+        </div>
+
+        <div class="company-card">
+
+            <h3>🔵 Google</h3>
+
+            <span class="difficulty expert">★★★★★</span>
+
+            <p><strong>Focus:</strong></p>
+
+            <ul>
+                <li>Algorithms</li>
+                <li>Graphs</li>
+                <li>Trees</li>
+                <li>System Design</li>
+            </ul>
+
+            <p class="question-count">120+ Questions</p>
+
+            <a href="#" class="company-btn">Explore →</a>
+
+        </div>
+
+        <div class="company-card">
+
+            <h3>🟩 Microsoft</h3>
+
+            <span class="difficulty medium">★★★★☆</span>
+
+            <p><strong>Focus:</strong></p>
+
+            <ul>
+                <li>Java</li>
+                <li>SQL</li>
+                <li>DSA</li>
+                <li>OOP</li>
+            </ul>
+
+            <p class="question-count">110+ Questions</p>
+
+            <a href="#" class="company-btn">Explore →</a>
+
+        </div>
+
+    </div>
 
 </section>
 
 <footer>
-    Built with Spring Boot and MySQL
-</footer>
 
+    <h3>🤖 AI Prep</h3>
+
+    <p>
+
+        Your AI-Powered Interview Preparation Platform
+
+    </p>
+
+    <p>
+
+        Built with Spring Boot • Thymeleaf • MySQL
+
+    </p>
+
+</footer>
 </body>
 </html>

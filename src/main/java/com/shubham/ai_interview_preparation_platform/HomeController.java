@@ -11,9 +11,18 @@ public class HomeController {
         return "index";
     }
 
-    @GetMapping("/subjects")
-    public String subjectsPage() {
-        return "subjects";
+    @GetMapping("/login")
+    public String loginPage() {
+        return "login";
+    }
+    @GetMapping("/student-dashboard")
+    public String studentDashboard() {
+        return "student-dashboard";
+    }
+
+    @GetMapping("/admin-dashboard")
+    public String adminDashboard() {
+        return "admin-dashboard";
     }
 
 }
