@@ -3,55 +3,133 @@
 <head>
     <title>Student Dashboard</title>
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
 </head>
 
 <body>
 
-<nav>
-    <h2>AI Interview Preparation Platform</h2>
+<div class="dashboard-container">
 
-    <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/subjects">Subjects</a></li>
-        <li><a href="/login">Logout</a></li>
-    </ul>
-</nav>
+    <!-- Sidebar -->
+    <aside class="sidebar">
 
-<section class="hero">
+        <div class="sidebar-logo">
+            <h2>🤖 AI Prep</h2>
+        </div>
 
-    <h1>Student Dashboard</h1>
+        <ul class="sidebar-menu">
 
-    <p>Choose a subject to start practicing.</p>
+            <li><a href="/student-dashboard">🏠 Dashboard</a></li>
 
-</section>
+            <li><a href="/subjects">📚 Subjects</a></li>
 
-<div class="cards-container">
+            <li><a href="#">🎤 Mock Interview</a></li>
 
-    <a href="/java" class="card">
-        <h2>Java</h2>
-    </a>
+            <li><a href="#">📄 Resume Review</a></li>
 
-    <a href="/dsa" class="card">
-        <h2>DSA</h2>
-    </a>
+            <li><a href="#">📈 Progress</a></li>
 
-    <a href="/dbms" class="card">
-        <h2>DBMS</h2>
-    </a>
+            <li><a href="#">🏆 Leaderboard</a></li>
 
-    <a href="/os" class="card">
-        <h2>Operating System</h2>
-    </a>
+            <li><a href="/login">🚪 Logout</a></li>
 
-    <a href="/oops" class="card">
-        <h2>OOPs</h2>
-    </a>
+        </ul>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <h1>👋 Welcome, Shubham</h1>
+
+            <p>Keep learning. You're getting closer to your dream job.</p>
+
+            <!-- Statistics Cards -->
+
+            <section class="stats-grid">
+
+                <a href="/java" style="text-decoration:none; color:inherit;">
+
+                    <div class="stat-card">
+
+                        <span class="stat-icon">☕</span>
+
+                        <h3>Java</h3>
+
+                        <h2>72%</h2>
+
+                        <p>Completed</p>
+
+                    </div>
+
+                </a>
+                <a href="/dsa" style="text-decoration:none; color:inherit;">
+                <div class="stat-card">
+                    <span class="stat-icon">💻</span>
+                    <h3>DSA</h3>
+                    <h2>41%</h2>
+                    <p>Completed</p>
+                </div>
+                </a>
+                <a href="/dbms" style="text-decoration:none; color:inherit;">
+                <div class="stat-card">
+                    <span class="stat-icon">🗄️</span>
+                    <h3>DBMS</h3>
+                    <h2>60%</h2>
+                    <p>Completed</p>
+                </div>
+                </a>
+                <a href="/os" style="text-decoration:none; color:inherit;">
+                <div class="stat-card">
+                    <span class="stat-icon">⚙️</span>
+                    <h3>Operating System</h3>
+                    <h2>22%</h2>
+                    <p>Completed</p>
+                </div>
+                </a>
+                <a href="/oops" style="text-decoration:none; color:inherit;">
+
+                    <div class="stat-card">
+                        <span class="stat-icon">⚙️</span>
+                        <h3>OOPs</h3>
+                        <h2>27%</h2>
+                        <p>Completed</p>
+                    </div>
+
+                </a>
+                <!-- Overall Progress Section -->
+
+                <section class="progress-section">
+
+                    <div class="progress-card">
+
+                        <div class="progress-header">
+                            <h2>📈 Overall Progress</h2>
+                            <span>72%</span>
+                        </div>
+
+                        <div class="progress-bar">
+
+                            <div class="progress-fill"></div>
+
+                        </div>
+
+                        <p>
+                            You're doing great! Keep practicing consistently.
+                        </p>
+
+                    </div>
+
+                </section>
+
+            </section>
+        </header>
+
+    </main>
 
 </div>
-
-<footer>
-    Built with Spring Boot and MySQL
-</footer>
 
 </body>
 </html>
