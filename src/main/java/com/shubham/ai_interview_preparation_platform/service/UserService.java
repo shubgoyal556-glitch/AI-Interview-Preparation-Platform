@@ -21,4 +21,15 @@ public class UserService {
         return userRepository.findByEmail(email);
     }
 
+    // NEW METHOD
+    public boolean loginUser(String email, String password) {
+
+        Optional<User> user = userRepository.findByEmail(email);
+
+        if(user.isPresent()) {
+            return user.get().getPassword().equals(password);
+        }
+
+        return false;
+    }
 }

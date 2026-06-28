@@ -11,10 +11,6 @@ public class HomeController {
         return "index";
     }
 
-    @GetMapping("/login")
-    public String loginPage() {
-        return "login";
-    }
     @GetMapping("/student-dashboard")
     public String studentDashboard() {
         return "student-dashboard";
