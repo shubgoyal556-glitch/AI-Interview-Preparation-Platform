@@ -1169,3 +1169,186 @@ footer hr{
     box-shadow:0 0 0 4px rgba(16,185,129,.15);
 
 }
+/* ===========================
+   Question Cards
+=========================== */
+
+.question-card{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-start;
+
+    gap:18px;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    transition:.3s;
+
+}
+
+.question-card h3{
+
+    color:#0F172A;
+
+    margin-bottom:20px;
+
+}
+
+.question-card hr{
+
+    border:none;
+
+    border-top:1px solid #E2E8F0;
+
+    margin:20px 0;
+
+}
+
+.question-card p{
+
+    color:#475569;
+
+    line-height:1.8;
+
+}
+/* =============================
+   Answer Toggle
+============================= */
+
+.answer-btn{
+
+    width:100%;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#10B981;
+
+    color:white;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.answer-btn:hover{
+
+    background:#059669;
+
+}
+
+.answer-box{
+
+    display:none;
+
+    margin-top:15px;
+
+    animation:fadeIn .35s ease;
+
+}
+.difficulty-badge{
+
+    display:inline-block;
+
+    padding:6px 16px;
+
+    border-radius:20px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    margin-bottom:18px;
+
+}
+
+/* Easy */
+
+.easy{
+
+    background:#DCFCE7;
+
+    color:#15803D;
+
+}
+
+/* Medium */
+
+.medium{
+
+    background:#FEF3C7;
+
+    color:#B45309;
+
+}
+
+/* Hard */
+
+.hard{
+
+    background:#FEE2E2;
+
+    color:#B91C1C;
+
+}
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(-10px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+.complete-btn{
+
+    width:100%;
+
+    margin-top:12px;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#2563EB;
+
+    color:white;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.complete-btn:hover{
+
+    background:#1D4ED8;
+
+}

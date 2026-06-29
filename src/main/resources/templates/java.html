@@ -48,44 +48,84 @@
 
 <section class="features">
 
-    <h2>Topics</h2>
+
+    <h2>☕ Java Interview Questions</h2>
+
+    <p class="section-subtitle">
+        Practice the most frequently asked Java interview questions and strengthen your concepts.
+    </p>
 
     <div class="cards-container">
 
-        <div class="card">
-            <h3>Java Basics</h3>
-            <p>Variables, Data Types, Operators</p>
-        </div>
+        <div class="card question-card" th:each="question : ${questions}">
+             <span class="difficulty-badge"
+                   th:classappend="${question.difficulty == 'Easy'} ? ' easy' :
+                      (${question.difficulty == 'Medium'} ? ' medium' : ' hard')"
+                   th:text="${question.difficulty}">
+</span>
 
-        <div class="card">
-            <h3>OOP</h3>
-            <p>Class, Object, Inheritance, Polymorphism</p>
-        </div>
+            <h3 th:text="${question.questionText}"></h3>
 
-        <div class="card">
-            <h3>Collections</h3>
-            <p>ArrayList, HashMap, Set, Queue</p>
-        </div>
+            <button class="answer-btn"
+                    onclick="toggleAnswer(this)">
+                Show Answer ▼
+            </button>
+            <form action="/complete-question" method="post">
 
-        <div class="card">
-            <h3>Exception Handling</h3>
-            <p>try, catch, throws, finally</p>
-        </div>
+                <input
+                        type="hidden"
+                        name="questionId"
+                        th:value="${question.id}">
 
-        <div class="card">
-            <h3>Multithreading</h3>
-            <p>Thread, Runnable, Synchronization</p>
-        </div>
+                <button
+                        type="submit"
+                        class="complete-btn">
 
-        <div class="card">
-            <h3>Interview Questions</h3>
-            <p>Practice Java Interview Questions</p>
+                    ✔ Mark as Completed
+
+                </button>
+
+            </form>
+
+            <div class="answer-box">
+
+                <hr>
+
+                <p th:text="${question.answer}"></p>
+
+            </div>
+
         </div>
 
     </div>
 
 </section>
+<script>
 
+    function toggleAnswer(button){
+
+        let answer = button.nextElementSibling;
+
+        if(answer.style.display==="block"){
+
+            answer.style.display="none";
+
+            button.innerHTML="Show Answer ▼";
+
+        }
+
+        else{
+
+            answer.style.display="block";
+
+            button.innerHTML="Hide Answer ▲";
+
+        }
+
+    }
+
+</script>
 </body>
+
 
 </html>

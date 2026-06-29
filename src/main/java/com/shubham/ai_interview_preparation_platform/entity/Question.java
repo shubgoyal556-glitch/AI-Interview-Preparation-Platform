@@ -7,6 +7,7 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "questions")
 
+
 public class  Question {
 
     @Id
@@ -52,5 +53,13 @@ public class  Question {
 
     public void setAnswer(String answer) {
         this.answer = answer;
+    }
+    private String difficulty;
+    public String getDifficulty() {
+        return difficulty;
+    }
+
+    public void setDifficulty(String difficulty) {
+        this.difficulty = difficulty;
     }
 }
