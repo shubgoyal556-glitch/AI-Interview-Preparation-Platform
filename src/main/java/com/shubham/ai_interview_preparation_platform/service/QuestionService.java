@@ -16,7 +16,11 @@ public class QuestionService {
     public List<Question> getAllQuestions() {
         return questionRepository.findAll();
     }
+    public long getQuestionCount(String category) {
 
+        return questionRepository.countByCategory(category);
+
+    }
     public List<Question> getQuestionsByCategory(String category) {
 
         List<Question> questions = questionRepository.findByCategory(category);

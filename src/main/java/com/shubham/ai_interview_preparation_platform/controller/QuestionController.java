@@ -19,6 +19,10 @@ public class QuestionController {
                 "questions",
                 questionService.getQuestionsByCategory("Java")
         );
+        model.addAttribute(
+                "questionCount",
+                questionService.getQuestionCount("Java")
+        );
 
         return "java";
     }
