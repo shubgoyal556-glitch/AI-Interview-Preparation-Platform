@@ -1321,6 +1321,33 @@ footer hr{
         transform:translateY(0);
 
     }
+.delete-btn{
+
+    width:100%;
+
+    padding:12px;
+
+    background:#DC2626;
+
+    color:white;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.delete-btn:hover{
+
+    background:#B91C1C;
+
+}
 
 }
 .complete-btn{

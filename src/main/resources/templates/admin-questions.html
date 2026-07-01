@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>All Questions</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="logo">
+        <h2>🤖 AI Prep</h2>
+        <span>Admin Panel</span>
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="/admin-dashboard">Dashboard</a></li>
+    </ul>
+
+</nav>
+
+<section class="features">
+
+    <h2>All Questions</h2>
+
+    <div class="cards-container">
+
+        <div class="card" th:each="question : ${questions}">
+
+            <span class="difficulty-badge"
+                  th:text="${question.difficulty}">
+            </span>
+
+            <h3 th:text="${question.questionText}"></h3>
+
+            <p>
+                <strong>Category:</strong>
+            <div style="margin-top:20px;">
+            <a th:href="@{/admin/edit-question/{id}(id=${question.id})}">
+
+                <button class="primary-btn">
+
+                    ✏ Edit
+
+                </button>
+
+            </a>
+
+            <br><br>
+
+                <a th:href="@{/admin/delete-question/{id}(id=${question.id})}">
+
+                    <button class="delete-btn">
+
+                        🗑 Delete
+
+                    </button>
+
+                </a>
+
+            </div>
+
+                <span th:text="${question.category}"></span>
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+</body>
+</html>

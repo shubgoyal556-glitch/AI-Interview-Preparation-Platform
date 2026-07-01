@@ -16,9 +16,6 @@ public class HomeController {
         return "student-dashboard";
     }
 
-    @GetMapping("/admin-dashboard")
-    public String adminDashboard() {
-        return "admin-dashboard";
-    }
+   
 
 }

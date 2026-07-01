@@ -19,7 +19,70 @@
 
     <label>Answer:</label>
     <textarea name="answer"></textarea>
-    <br><br>
+    <br><br><!DOCTYPE html>
+    <html xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+
+        <title>Add Question</title>
+
+        <link rel="stylesheet" href="/css/style.css">
+
+    </head>
+
+    <body>
+
+    <div style="width:700px;margin:50px auto;">
+
+        <h1>Add New Question</h1>
+
+        <form action="/admin/save-question"
+              method="post"
+              th:object="${question}">
+
+            <input type="text"
+                   th:field="*{category}"
+                   placeholder="Category">
+
+            <br><br>
+
+            <textarea
+                    th:field="*{questionText}"
+                    rows="5"
+                    style="width:100%;"
+                    placeholder="Question">
+        </textarea>
+
+            <br><br>
+
+            <textarea
+                    th:field="*{answer}"
+                    rows="8"
+                    style="width:100%;"
+                    placeholder="Answer">
+        </textarea>
+
+            <br><br>
+
+            <input type="text"
+                   th:field="*{difficulty}"
+                   placeholder="Difficulty">
+
+            <br><br>
+
+            <button class="primary-btn">
+
+                Save Question
+
+            </button>
+
+        </form>
+
+    </div>
+
+    </body>
+
+    </html>
 
     <button type="submit">Save Question</button>
 

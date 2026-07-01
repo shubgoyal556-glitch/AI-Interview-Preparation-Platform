@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <title>Edit Question</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+<body>
+
+<div style="width:700px;margin:40px auto;">
+
+    <h1>Edit Question</h1>
+
+    <form action="/admin/update-question"
+          method="post"
+          th:object="${question}">
+
+        <input type="hidden" th:field="*{id}">
+
+        <input
+                type="text"
+                th:field="*{category}"
+                placeholder="Category">
+
+        <br><br>
+
+        <textarea
+                th:field="*{questionText}"
+                rows="5"
+                style="width:100%;"></textarea>
+
+        <br><br>
+
+        <textarea
+                th:field="*{answer}"
+                rows="8"
+                style="width:100%;"></textarea>
+
+        <br><br>
+
+        <input
+                type="text"
+                th:field="*{difficulty}"
+                placeholder="Difficulty">
+
+        <br><br>
+
+        <button class="primary-btn">
+
+            Update Question
+
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+
+</html>

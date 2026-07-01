@@ -33,4 +33,14 @@ public class QuestionService {
     public Question saveQuestion(Question question) {
         return questionRepository.save(question);
     }
+    public void deleteQuestion(Long id) {
+
+        questionRepository.deleteById(id);
+
+    }
+    public Question getQuestionById(Long id) {
+
+        return questionRepository.findById(id).orElse(null);
+
+    }
 }
