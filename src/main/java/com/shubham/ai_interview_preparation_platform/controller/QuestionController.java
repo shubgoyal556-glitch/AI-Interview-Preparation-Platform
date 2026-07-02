@@ -26,47 +26,66 @@ public class QuestionController {
 
         return "java";
     }
-        @GetMapping("/dsa")
-        public String dsaQuestions(Model model) {
+    @GetMapping("/dsa")
+    public String dsaQuestions(Model model){
 
-            model.addAttribute(
-                    "questions",
-                    questionService.getQuestionsByCategory("DSA")
-            );
+        model.addAttribute(
+                "questions",
+                questionService.getQuestionsByCategory("DSA")
+        );
 
-            return "dsa";
-        }
+        model.addAttribute(
+                "questionCount",
+                questionService.getQuestionCount("DSA")
+        );
 
-        @GetMapping("/dbms")
-        public String dbmsQuestions(Model model) {
+        return "dsa";
+    }
 
-            model.addAttribute(
-                    "questions",
-                    questionService.getQuestionsByCategory("DBMS")
-            );
+    @GetMapping("/dbms")
+    public String dbmsQuestions(Model model) {
 
-            return "dbms";
-        }
+        model.addAttribute(
+                "questions",
+                questionService.getQuestionsByCategory("DBMS")
+        );
 
-        @GetMapping("/os")
-        public String osQuestions(Model model) {
+        model.addAttribute(
+                "questionCount",
+                questionService.getQuestionCount("DBMS")
+        );
 
-            model.addAttribute(
-                    "questions",
-                    questionService.getQuestionsByCategory("OS")
-            );
+        return "dbms";
+    }
+    @GetMapping("/os")
+    public String osQuestions(Model model) {
 
-            return "os";
-        }
+        model.addAttribute(
+                "questions",
+                questionService.getQuestionsByCategory("OS")
+        );
 
-        @GetMapping("/oops")
-        public String oopsQuestions(Model model) {
+        model.addAttribute(
+                "questionCount",
+                questionService.getQuestionCount("OS")
+        );
 
-            model.addAttribute(
-                    "questions",
-                    questionService.getQuestionsByCategory("OOPs")
-            );
+        return "os";
+    }
 
-            return "oops";
-        }
+    @GetMapping("/oops")
+    public String oopsQuestions(Model model) {
+
+        model.addAttribute(
+                "questions",
+                questionService.getQuestionsByCategory("OOPs")
+        );
+
+        model.addAttribute(
+                "questionCount",
+                questionService.getQuestionCount("OOPs")
+        );
+
+        return "oops";
+    }
     }

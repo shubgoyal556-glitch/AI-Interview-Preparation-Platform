@@ -1,47 +1,138 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
-    <title>DSA Questions</title>
-    <link rel="stylesheet" th:href="@{/css/style.css}">
+
+    <title>DSA Roadmap</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+
 </head>
+
 <body>
 
 <nav class="navbar">
-    <div class="logo">AI Interview Preparation Platform</div>
+
+    <div class="logo">
+        <h2>🤖 AI Prep</h2>
+        <span>DSA Learning</span>
+    </div>
 
     <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/java">Java</a></li>
-        <li><a href="/dsa">DSA</a></li>
-        <li><a href="/dbms">DBMS</a></li>
-        <li><a href="/os">OS</a></li>
-        <li><a href="/oops">OOPs</a></li>
+
+        <li><a href="/student-dashboard">Dashboard</a></li>
+
+        <li><a href="/login">Logout</a></li>
+
     </ul>
+
 </nav>
 
 <section class="hero">
-    <h1>DSA Interview Questions</h1>
-    <p>Practice DSA interview questions from the database.</p>
-</section>
 
-<div class="cards-container">
+    <div class="hero-left">
 
-    <div th:each="question : ${questions}" class="card">
+        <div class="hero-badge">
+            💻 DSA Interview Preparation
+        </div>
 
-        <h3 th:text="${question.questionText}"></h3>
+        <h1>DSA Learning Roadmap</h1>
 
         <p>
-            <strong>Answer:</strong>
-            <span th:text="${question.answer}"></span>
+            Master DSA from basics to advanced interview questions.
         </p>
 
     </div>
 
-</div>
+</section>
 
-<footer>
-    <p>Built with Spring Boot and MySQL</p>
-</footer>
+<section class="features">
 
+
+    <h2>☕ DSA Interview Questions</h2>
+
+    <p class="section-subtitle">
+
+        <span th:text="${questionCount}"></span>
+
+        Questions Available
+
+    </p>
+    <p class="section-subtitle">
+        Practice the most frequently asked DSA interview questions and strengthen your concepts.
+    </p>
+
+    <div class="cards-container">
+
+        <div class="card question-card" th:each="question : ${questions}">
+             <span class="difficulty-badge"
+                   th:classappend="${question.difficulty == 'Easy'} ? ' easy' :
+                      (${question.difficulty == 'Medium'} ? ' medium' : ' hard')"
+                   th:text="${question.difficulty}">
+</span>
+
+            <h3 th:text="${question.questionText}"></h3>
+
+            <button class="answer-btn"
+                    onclick="toggleAnswer(this)">
+                Show Answer ▼
+            </button>
+            <form action="/complete-question" method="post">
+
+                <input
+                        type="hidden"
+                        name="questionId"
+                        th:value="${question.id}">
+
+                <button
+                        type="submit"
+                        class="complete-btn">
+
+                    ✔ Mark as Completed
+
+                </button>
+
+            </form>
+
+            <div class="answer-box">
+
+                <hr>
+
+                <p th:text="${question.answer}"></p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<script>
+
+    function toggleAnswer(button){
+
+        let answer = button.nextElementSibling;
+
+        if(answer.style.display==="block"){
+
+            answer.style.display="none";
+
+            button.innerHTML="Show Answer ▼";
+
+        }
+
+        else{
+
+            answer.style.display="block";
+
+            button.innerHTML="Hide Answer ▲";
+
+        }
+
+    }
+
+</script>
 </body>
+
+
 </html>

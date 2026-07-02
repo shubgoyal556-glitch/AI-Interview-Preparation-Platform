@@ -1,9 +1,138 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
+
 <head>
-    <title>OOPs Questions</title>
+
+    <title>OOPs Roadmap</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+
 </head>
+
 <body>
-<h1>OOPs Interview Questions</h1>
+
+<nav class="navbar">
+
+    <div class="logo">
+        <h2>🤖 AI Prep</h2>
+        <span>OOPs Learning</span>
+    </div>
+
+    <ul class="nav-links">
+
+        <li><a href="/student-dashboard">Dashboard</a></li>
+
+        <li><a href="/login">Logout</a></li>
+
+    </ul>
+
+</nav>
+
+<section class="hero">
+
+    <div class="hero-left">
+
+        <div class="hero-badge">
+            OOPs Interview Preparation
+        </div>
+
+        <h1>OOPs Learning Roadmap</h1>
+
+        <p>
+            Master OOPs from basics to advanced interview questions.
+        </p>
+
+    </div>
+
+</section>
+
+<section class="features">
+
+
+    <h2>OOPs Interview Questions</h2>
+
+    <p class="section-subtitle">
+
+        <span th:text="${questionCount}"></span>
+
+        Questions Available
+
+    </p>
+    <p class="section-subtitle">
+        Practice the most frequently asked OOPs interview questions and strengthen your concepts.
+    </p>
+
+    <div class="cards-container">
+
+        <div class="card question-card" th:each="question : ${questions}">
+             <span class="difficulty-badge"
+                   th:classappend="${question.difficulty == 'Easy'} ? ' easy' :
+                      (${question.difficulty == 'Medium'} ? ' medium' : ' hard')"
+                   th:text="${question.difficulty}">
+</span>
+
+            <h3 th:text="${question.questionText}"></h3>
+
+            <button class="answer-btn"
+                    onclick="toggleAnswer(this)">
+                Show Answer ▼
+            </button>
+            <form action="/complete-question" method="post">
+
+                <input
+                        type="hidden"
+                        name="questionId"
+                        th:value="${question.id}">
+
+                <button
+                        type="submit"
+                        class="complete-btn">
+
+                    ✔ Mark as Completed
+
+                </button>
+
+            </form>
+
+            <div class="answer-box">
+
+                <hr>
+
+                <p th:text="${question.answer}"></p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<script>
+
+    function toggleAnswer(button){
+
+        let answer = button.nextElementSibling;
+
+        if(answer.style.display==="block"){
+
+            answer.style.display="none";
+
+            button.innerHTML="Show Answer ▼";
+
+        }
+
+        else{
+
+            answer.style.display="block";
+
+            button.innerHTML="Hide Answer ▲";
+
+        }
+
+    }
+
+</script>
 </body>
+
+
 </html>
