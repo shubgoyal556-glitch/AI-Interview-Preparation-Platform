@@ -28,5 +28,27 @@ public class CompletedQuestionService {
         return repository.countByUserId(userId);
 
     }
+    public long getCompletedQuestionCount(Long userId) {
+
+        return repository.countByUserId(userId);
+
+    }
+    public void markCompleted(Long userId, Long questionId) {
+
+        if (!repository.existsByUserIdAndQuestionId(userId, questionId)) {
+
+            CompletedQuestion completedQuestion = new CompletedQuestion();
+
+            completedQuestion.setUserId(userId);
+            completedQuestion.setQuestionId(questionId);
+
+            repository.save(completedQuestion);
+        }
+    }
+    public long getCompletedByCategory(Long userId, String category) {
+
+        return repository.countCompletedByUserAndCategory(userId, category);
+
+    }
 
 }
