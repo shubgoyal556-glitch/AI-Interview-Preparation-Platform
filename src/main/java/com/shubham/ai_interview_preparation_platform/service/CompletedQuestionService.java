@@ -50,5 +50,11 @@ public class CompletedQuestionService {
         return repository.countCompletedByUserAndCategory(userId, category);
 
     }
+    public boolean isQuestionCompleted(Long userId, Long questionId) {
+
+        return repository.existsByUserIdAndQuestionId(userId, questionId);
+
+    }
+
 
 }

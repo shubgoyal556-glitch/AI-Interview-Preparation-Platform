@@ -1,14 +1,10 @@
 package com.shubham.ai_interview_preparation_platform.entity;
 
-
 import jakarta.persistence.*;
-
 
 @Entity
 @Table(name = "questions")
-
-
-public class  Question {
+public class Question {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,9 +12,12 @@ public class  Question {
 
     private String category;
 
+    @Column(name = "question_text")
     private String questionText;
 
     private String answer;
+
+    private String difficulty;
 
     public Question() {
     }
@@ -54,7 +53,7 @@ public class  Question {
     public void setAnswer(String answer) {
         this.answer = answer;
     }
-    private String difficulty;
+
     public String getDifficulty() {
         return difficulty;
     }

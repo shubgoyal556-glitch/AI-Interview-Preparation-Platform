@@ -24,8 +24,10 @@ public class User {
 
     private String branch;
 
+    @Column(name = "year_of_study")
     private Integer yearOfStudy;
 
+    @Column(name = "created_at")
     private LocalDateTime createdAt;
 
     public User() {

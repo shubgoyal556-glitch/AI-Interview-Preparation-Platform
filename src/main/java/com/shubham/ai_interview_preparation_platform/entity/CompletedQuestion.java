@@ -11,10 +11,13 @@ public class CompletedQuestion {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "user_id", nullable = false)
     private Long userId;
 
+    @Column(name = "question_id", nullable = false)
     private Long questionId;
 
+    @Column(name = "completed_at")
     private LocalDateTime completedAt;
 
     public CompletedQuestion() {

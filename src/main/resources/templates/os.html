@@ -84,13 +84,27 @@
                         name="questionId"
                         th:value="${question.id}">
 
-                <button
-                        type="submit"
-                        class="complete-btn">
+                <div th:if="${completedQuestionIds.contains(question.id)}">
+                    <button type="button" class="completed-btn" disabled>
+                        ✓ Completed
+                    </button>
+                </div>
 
-                    ✔ Mark as Completed
+                <div th:unless="${completedQuestionIds.contains(question.id)}">
+                    <form action="/complete-question" method="post">
+                        <input type="hidden"
+                               name="questionId"
+                               th:value="${question.id}">
 
-                </button>
+                        <input type="hidden"
+                               name="category"
+                               value="os">
+
+                        <button type="submit" class="complete-btn">
+                            Mark as Completed
+                        </button>
+                    </form>
+                </div>
 
             </form>
 

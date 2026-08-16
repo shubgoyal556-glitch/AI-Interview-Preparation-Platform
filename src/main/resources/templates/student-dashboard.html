@@ -42,8 +42,9 @@
 
         <header class="topbar">
 
-            <h1>👋 Welcome, Shubham</h1>
-
+            <h1>
+                👋 Welcome, <span th:text="${userName}">Student</span>
+            </h1>
             <p>Keep learning. You're getting closer to your dream job.</p>
 
             <!-- Statistics Cards -->
@@ -109,13 +110,14 @@
 
                         <div class="progress-header">
                             <h2>📈 Overall Progress</h2>
-                            <span>72%</span>
+                            <span th:text="${overallProgress} + '%'">0%</span>
                         </div>
 
                         <div class="progress-bar">
 
-                            <div class="progress-fill"></div>
-
+                            <div class="progress-fill"
+                                 th:style="'width:' + ${overallProgress} + '%'">
+                            </div>
                         </div>
 
                         <p>

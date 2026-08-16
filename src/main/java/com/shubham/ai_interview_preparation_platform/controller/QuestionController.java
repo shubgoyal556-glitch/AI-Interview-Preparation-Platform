@@ -1,10 +1,15 @@
 package com.shubham.ai_interview_preparation_platform.controller;
 
+import com.shubham.ai_interview_preparation_platform.service.CompletedQuestionService;
 import com.shubham.ai_interview_preparation_platform.service.QuestionService;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Controller
 public class QuestionController {
@@ -12,80 +17,161 @@ public class QuestionController {
     @Autowired
     private QuestionService questionService;
 
-    @GetMapping("/java")
-    public String javaQuestions(Model model) {
+    @Autowired
+    private CompletedQuestionService completedQuestionService;
 
-        model.addAttribute(
-                "questions",
-                questionService.getQuestionsByCategory("Java")
-        );
+
+    @GetMapping("/java")
+    public String javaQuestions(Model model, HttpSession session) {
+
+        Long userId = (Long) session.getAttribute("userId");
+
+        if (userId == null) {
+            return "redirect:/login";
+        }
+
+        var questions = questionService.getQuestionsByCategory("Java");
+
+        model.addAttribute("questions", questions);
+
         model.addAttribute(
                 "questionCount",
                 questionService.getQuestionCount("Java")
         );
 
+        Set<Long> completedQuestionIds = new HashSet<>();
+
+        for (var question : questions) {
+
+            if (completedQuestionService.isQuestionCompleted(
+                    userId,
+                    question.getId())) {
+
+                completedQuestionIds.add(question.getId());
+            }
+        }
+
+        model.addAttribute(
+                "completedQuestionIds",
+                completedQuestionIds
+        );
+
         return "java";
     }
+
+
     @GetMapping("/dsa")
-    public String dsaQuestions(Model model){
+    public String dsaQuestions(Model model, HttpSession session) {
 
-        model.addAttribute(
-                "questions",
-                questionService.getQuestionsByCategory("DSA")
-        );
+        Long userId = (Long) session.getAttribute("userId");
 
-        model.addAttribute(
-                "questionCount",
-                questionService.getQuestionCount("DSA")
-        );
+        if (userId == null) {
+            return "redirect:/login";
+        }
+
+        var questions = questionService.getQuestionsByCategory("DSA");
+
+        model.addAttribute("questions", questions);
+        model.addAttribute("questionCount", questions.size());
+
+        Set<Long> completedQuestionIds = new HashSet<>();
+
+        for (var question : questions) {
+            if (completedQuestionService.isQuestionCompleted(
+                    userId, question.getId())) {
+                completedQuestionIds.add(question.getId());
+            }
+        }
+
+        model.addAttribute("completedQuestionIds", completedQuestionIds);
 
         return "dsa";
     }
 
+
     @GetMapping("/dbms")
-    public String dbmsQuestions(Model model) {
+    public String dbmsQuestions(Model model, HttpSession session) {
 
-        model.addAttribute(
-                "questions",
-                questionService.getQuestionsByCategory("DBMS")
-        );
+        Long userId = (Long) session.getAttribute("userId");
 
-        model.addAttribute(
-                "questionCount",
-                questionService.getQuestionCount("DBMS")
-        );
+        if (userId == null) {
+            return "redirect:/login";
+        }
+
+        var questions = questionService.getQuestionsByCategory("DBMS");
+
+        model.addAttribute("questions", questions);
+        model.addAttribute("questionCount", questions.size());
+
+        Set<Long> completedQuestionIds = new HashSet<>();
+
+        for (var question : questions) {
+            if (completedQuestionService.isQuestionCompleted(
+                    userId, question.getId())) {
+                completedQuestionIds.add(question.getId());
+            }
+        }
+
+        model.addAttribute("completedQuestionIds", completedQuestionIds);
 
         return "dbms";
     }
+
+
     @GetMapping("/os")
-    public String osQuestions(Model model) {
+    public String osQuestions(Model model, HttpSession session) {
 
-        model.addAttribute(
-                "questions",
-                questionService.getQuestionsByCategory("OS")
-        );
+        Long userId = (Long) session.getAttribute("userId");
 
-        model.addAttribute(
-                "questionCount",
-                questionService.getQuestionCount("OS")
-        );
+        if (userId == null) {
+            return "redirect:/login";
+        }
+
+        var questions = questionService.getQuestionsByCategory("OS");
+
+        model.addAttribute("questions", questions);
+        model.addAttribute("questionCount", questions.size());
+
+        Set<Long> completedQuestionIds = new HashSet<>();
+
+        for (var question : questions) {
+            if (completedQuestionService.isQuestionCompleted(
+                    userId, question.getId())) {
+                completedQuestionIds.add(question.getId());
+            }
+        }
+
+        model.addAttribute("completedQuestionIds", completedQuestionIds);
 
         return "os";
     }
 
+
     @GetMapping("/oops")
-    public String oopsQuestions(Model model) {
+    public String oopsQuestions(Model model, HttpSession session) {
 
-        model.addAttribute(
-                "questions",
-                questionService.getQuestionsByCategory("OOPs")
-        );
+        Long userId = (Long) session.getAttribute("userId");
 
-        model.addAttribute(
-                "questionCount",
-                questionService.getQuestionCount("OOPs")
-        );
+        if (userId == null) {
+            return "redirect:/login";
+        }
+
+        var questions = questionService.getQuestionsByCategory("OOPs");
+
+        model.addAttribute("questions", questions);
+        model.addAttribute("questionCount", questions.size());
+
+        Set<Long> completedQuestionIds = new HashSet<>();
+
+        for (var question : questions) {
+            if (completedQuestionService.isQuestionCompleted(
+                    userId, question.getId())) {
+                completedQuestionIds.add(question.getId());
+            }
+        }
+
+        model.addAttribute("completedQuestionIds", completedQuestionIds);
 
         return "oops";
     }
-    }
+}
