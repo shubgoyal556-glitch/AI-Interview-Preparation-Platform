@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <title>Student Dashboard</title>
+
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/dashboard.css">
 </head>
@@ -19,117 +21,194 @@
 
         <ul class="sidebar-menu">
 
-            <li><a href="/student-dashboard">🏠 Dashboard</a></li>
+            <li>
+                <a href="/student-dashboard">🏠 Dashboard</a>
+            </li>
 
-            <li><a href="/subjects">📚 Subjects</a></li>
+            <li>
+                <a href="/subjects">📚 Subjects</a>
+            </li>
 
-            <li><a href="#">🎤 Mock Interview</a></li>
+            <li>
+                <a href="#">🎤 Mock Interview</a>
+            </li>
 
-            <li><a href="#">📄 Resume Review</a></li>
+            <li>
+                <a href="#">📄 Resume Review</a>
+            </li>
 
-            <li><a href="#">📈 Progress</a></li>
+            <li>
+                <a href="#">📈 Progress</a>
+            </li>
 
-            <li><a href="#">🏆 Leaderboard</a></li>
+            <li>
+                <a href="#">🏆 Leaderboard</a>
+            </li>
 
-            <li><a href="/login">🚪 Logout</a></li>
+            <li>
+                <a href="/login">🚪 Logout</a>
+            </li>
 
         </ul>
 
     </aside>
 
+
     <!-- Main Content -->
     <main class="main-content">
 
+        <!-- Top Header -->
         <header class="topbar">
 
             <h1>
-                👋 Welcome, <span th:text="${userName}">Student</span>
+                👋 Welcome,
+                <span th:text="${userName}">Student</span>
             </h1>
-            <p>Keep learning. You're getting closer to your dream job.</p>
 
-            <!-- Statistics Cards -->
+            <p>
+                Keep learning. You're getting closer to your dream job.
+            </p>
 
-            <section class="stats-grid">
-
-                <a href="/java" style="text-decoration:none; color:inherit;">
-
-                    <div class="stat-card">
-
-                        <span class="stat-icon">☕</span>
-
-                        <h3>Java</h3>
-
-                        <h2 th:text="${javaProgress} + '%'"></h2>
-
-                        <p>Completed</p>
-
-                    </div>
-
-                </a>
-                <a href="/dsa" style="text-decoration:none; color:inherit;">
-                <div class="stat-card">
-                    <span class="stat-icon">💻</span>
-                    <h3>DSA</h3>
-                    <h2 th:text="${dsaProgress} + '%'"></h2>
-                    <p>Completed</p>
-                </div>
-                </a>
-                <a href="/dbms" style="text-decoration:none; color:inherit;">
-                <div class="stat-card">
-                    <span class="stat-icon">🗄️</span>
-                    <h3>DBMS</h3>
-                    <h2 th:text="${dbmsProgress} + '%'"></h2>
-
-                    <p>Completed</p>
-                </div>
-                </a>
-                <a href="/os" style="text-decoration:none; color:inherit;">
-                <div class="stat-card">
-                    <span class="stat-icon">⚙️</span>
-                    <h3>Operating System</h3>
-                    <h2 th:text="${osProgress} + '%'"></h2>
-
-                    <p>Completed</p>
-                </div>
-                </a>
-                <a href="/oops" style="text-decoration:none; color:inherit;">
-
-                    <div class="stat-card">
-                        <span class="stat-icon">⚙️</span>
-                        <h3>OOPs</h3>
-                        <h2 th:text="${oopsProgress} + '%'"></h2>
-                        <p>Completed</p>
-                    </div>
-
-                </a>
-                <!-- Overall Progress Section -->
-
-                <section class="progress-section">
-
-                    <div class="progress-card">
-
-                        <div class="progress-header">
-                            <h2>📈 Overall Progress</h2>
-                            <span th:text="${overallProgress} + '%'">0%</span>
-                        </div>
-
-                        <div class="progress-bar">
-
-                            <div class="progress-fill"
-                                 th:style="'width:' + ${overallProgress} + '%'">
-                            </div>
-                        </div>
-
-                        <p>
-                            You're doing great! Keep practicing consistently.
-                        </p>
-
-                    </div>
-
-                </section>
-
-            </section>
         </header>
+
+
+        <!-- Subject Statistics -->
+        <section class="stats-grid">
+
+            <!-- Java -->
+            <a href="/java" class="stat-link">
+
+                <div class="stat-card">
+
+                    <span class="stat-icon">☕</span>
+
+                    <h3>Java</h3>
+
+                    <h2 th:text="${javaProgress} + '%'">
+                        0%
+                    </h2>
+
+                    <p>Completed</p>
+
+                </div>
+
+            </a>
+
+
+            <!-- DSA -->
+            <a href="/dsa" class="stat-link">
+
+                <div class="stat-card">
+
+                    <span class="stat-icon">💻</span>
+
+                    <h3>DSA</h3>
+
+                    <h2 th:text="${dsaProgress} + '%'">
+                        0%
+                    </h2>
+
+                    <p>Completed</p>
+
+                </div>
+
+            </a>
+
+
+            <!-- DBMS -->
+            <a href="/dbms" class="stat-link">
+
+                <div class="stat-card">
+
+                    <span class="stat-icon">🗄️</span>
+
+                    <h3>DBMS</h3>
+
+                    <h2 th:text="${dbmsProgress} + '%'">
+                        0%
+                    </h2>
+
+                    <p>Completed</p>
+
+                </div>
+
+            </a>
+
+
+            <!-- Operating System -->
+            <a href="/os" class="stat-link">
+
+                <div class="stat-card">
+
+                    <span class="stat-icon">⚙️</span>
+
+                    <h3>Operating System</h3>
+
+                    <h2 th:text="${osProgress} + '%'">
+                        0%
+                    </h2>
+
+                    <p>Completed</p>
+
+                </div>
+
+            </a>
+
+
+            <!-- OOPs -->
+            <a href="/oops" class="stat-link">
+
+                <div class="stat-card">
+
+                    <span class="stat-icon">🧩</span>
+
+                    <h3>OOPs</h3>
+
+                    <h2 th:text="${oopsProgress} + '%'">
+                        0%
+                    </h2>
+
+                    <p>Completed</p>
+
+                </div>
+
+            </a>
+
+        </section>
+
+
+        <!-- Overall Progress -->
+        <section class="progress-section">
+
+            <div class="progress-card">
+
+                <div class="progress-header">
+
+                    <h2>📈 Overall Progress</h2>
+
+                    <span th:text="${overallProgress} + '%'">
+                        0%
+                    </span>
+
+                </div>
+
+
+                <div class="progress-bar">
+
+                    <div class="progress-fill"
+                         th:style="'width:' + ${overallProgress} + '%'">
+                    </div>
+
+                </div>
+
+
+                <p>
+                    You're doing great! Keep practicing consistently.
+                </p>
+
+            </div>
+
+        </section>
 
     </main>
 

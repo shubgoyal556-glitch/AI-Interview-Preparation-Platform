@@ -20,13 +20,18 @@
 
     <ul class="nav-links">
 
-        <li><a href="/student-dashboard">Dashboard</a></li>
+        <li>
+            <a href="/student-dashboard">Dashboard</a>
+        </li>
 
-        <li><a href="/login">Logout</a></li>
+        <li>
+            <a href="/login">Logout</a>
+        </li>
 
     </ul>
 
 </nav>
+
 
 <section class="hero">
 
@@ -46,8 +51,8 @@
 
 </section>
 
-<section class="features">
 
+<section class="features">
 
     <h2>☕ Java Interview Questions</h2>
 
@@ -58,55 +63,39 @@
         Questions Available
 
     </p>
+
     <p class="section-subtitle">
-        Practice the most frequently asked Java interview questions and strengthen your concepts.
+        Practice the most frequently asked Java interview questions
+        and strengthen your concepts.
     </p>
+
 
     <div class="cards-container">
 
-        <div class="card question-card" th:each="question : ${questions}">
-             <span class="difficulty-badge"
-                   th:classappend="${question.difficulty == 'Easy'} ? ' easy' :
-                      (${question.difficulty == 'Medium'} ? ' medium' : ' hard')"
-                   th:text="${question.difficulty}">
-</span>
+        <div class="card question-card"
+             th:each="question : ${questions}">
 
+            <!-- Difficulty -->
+            <span class="difficulty-badge"
+                  th:classappend="${question.difficulty == 'Easy'} ? ' easy' :
+                      (${question.difficulty == 'Medium'} ? ' medium' : ' hard')"
+                  th:text="${question.difficulty}">
+            </span>
+
+
+            <!-- Question -->
             <h3 th:text="${question.questionText}"></h3>
 
+
+            <!-- Answer Button -->
             <button class="answer-btn"
+                    type="button"
                     onclick="toggleAnswer(this)">
                 Show Answer ▼
             </button>
-            <form action="/complete-question" method="post">
 
-                <input
-                        type="hidden"
-                        name="questionId"
-                        th:value="${question.id}">
 
-                <div th:if="${completedQuestionIds.contains(question.id)}">
-                    <button class="completed-btn" disabled>
-                        ✓ Completed
-                    </button>
-                </div>
-
-                <div th:unless="${completedQuestionIds.contains(question.id)}">
-                    <form action="/complete-question" method="post">
-                        <input type="hidden"
-                               name="questionId"
-                               th:value="${question.id}">
-
-                        <input type="hidden"
-                               name="category"
-                               value="java">
-                        <button type="submit" class="complete-btn">
-                            Mark as Completed
-                        </button>
-                    </form>
-                </div>
-
-            </form>
-
+            <!-- Answer -->
             <div class="answer-box">
 
                 <hr>
@@ -115,37 +104,72 @@
 
             </div>
 
+
+            <!-- Completion -->
+            <div th:if="${completedQuestionIds.contains(question.id)}">
+
+                <button class="completed-btn" disabled>
+                    ✓ Completed
+                </button>
+
+            </div>
+
+
+            <div th:unless="${completedQuestionIds.contains(question.id)}">
+
+                <form action="/complete-question" method="post">
+
+                    <input
+                            type="hidden"
+                            name="questionId"
+                            th:value="${question.id}">
+
+                    <input
+                            type="hidden"
+                            name="category"
+                            value="Java">
+
+                    <button
+                            type="submit"
+                            class="complete-btn">
+                        ✓ Mark as Completed
+                    </button>
+
+                </form>
+
+            </div>
+
         </div>
 
     </div>
 
 </section>
+
+
 <script>
 
-    function toggleAnswer(button){
+    function toggleAnswer(button) {
 
         let answer = button.nextElementSibling;
 
-        if(answer.style.display==="block"){
+        if (answer.style.display === "block") {
 
-            answer.style.display="none";
+            answer.style.display = "none";
 
-            button.innerHTML="Show Answer ▼";
+            button.innerHTML = "Show Answer ▼";
 
-        }
+        } else {
 
-        else{
+            answer.style.display = "block";
 
-            answer.style.display="block";
-
-            button.innerHTML="Hide Answer ▲";
+            button.innerHTML = "Hide Answer ▲";
 
         }
 
     }
 
 </script>
-</body>
 
+</body>
 
 </html>

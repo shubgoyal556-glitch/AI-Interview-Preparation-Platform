@@ -2,256 +2,227 @@
    Dashboard Layout
 =========================== */
 
-.dashboard-container{
-
-    display:flex;
-
-    min-height:100vh;
-
-    background:#F8FAFC;
-
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+    background: #F8FAFC;
 }
 
-.sidebar{
+/* ===========================
+   Sidebar
+=========================== */
 
-    width:260px;
-
-    background:#0F172A;
-
-    color:white;
-
-    padding:30px;
-
+.sidebar {
+    width: 260px;
+    background: #0F172A;
+    color: white;
+    padding: 30px;
+    flex-shrink: 0;
 }
 
-.sidebar-logo{
-
-    font-size:26px;
-
-    font-weight:700;
-
-    margin-bottom:40px;
-
+.sidebar-logo {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 40px;
 }
 
-.sidebar-menu{
-
-    list-style:none;
-
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-.sidebar-menu li{
-
-    margin:18px 0;
-
+.sidebar-menu li {
+    margin: 18px 0;
 }
 
-.sidebar-menu a{
-
-    color:white;
-
-    text-decoration:none;
-
-    font-size:17px;
-
-    display:block;
-
-    padding:12px;
-
-    border-radius:10px;
-
-    transition:.3s;
-
+.sidebar-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+    padding: 12px;
+    border-radius: 10px;
+    transition: 0.3s;
 }
 
-.sidebar-menu a:hover{
-
-    background:#10B981;
-
+.sidebar-menu a:hover {
+    background: #10B981;
 }
 
-.main-content{
+/* ===========================
+   Main Content
+=========================== */
 
-    flex:1;
-
-    padding:40px;
-
+.main-content {
+    flex: 1;
+    padding: 40px;
+    min-width: 0;
 }
 
-.topbar{
-
-    background:white;
-
-    padding:30px;
-
-    border-radius:20px;
-
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
-
+.topbar {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
-.topbar h1{
-
-    margin-bottom:10px;
-
+.topbar h1 {
+    margin-bottom: 10px;
 }
 
-.topbar p{
-
-    color:#64748B;
-
+.topbar p {
+    color: #64748B;
 }
+
 /* ===========================
    Statistics Cards
 =========================== */
 
-.stats-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(4,1fr);
-
-    gap:25px;
-
-    margin-top:35px;
-
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin-top: 35px;
 }
 
-.stat-card{
-
-    background:white;
-
-    padding:30px;
-
-    border-radius:20px;
-
-    text-align:center;
-
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
-
-    transition:.3s;
-
-    cursor:pointer;
-
+.stat-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
 }
 
-.stat-card:hover{
-
-    transform:translateY(-8px);
-
-    box-shadow:0 20px 40px rgba(16,185,129,.15);
-
+.stat-card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+    cursor: pointer;
+    height: 100%;
+    box-sizing: border-box;
 }
 
-.stat-icon{
-
-    font-size:40px;
-
+.stat-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(16, 185, 129, 0.15);
 }
 
-.stat-card h3{
-
-    margin-top:18px;
-
-    color:#64748B;
-
+.stat-icon {
+    font-size: 40px;
 }
 
-.stat-card h2{
-
-    margin:10px 0;
-
-    color:#10B981;
-
-    font-size:38px;
-
+.stat-card h3 {
+    margin-top: 18px;
+    color: #64748B;
 }
 
-.stat-card p{
-
-    color:#94A3B8;
-
+.stat-card h2 {
+    margin: 10px 0;
+    color: #10B981;
+    font-size: 38px;
 }
+
+.stat-card p {
+    color: #94A3B8;
+}
+
 /* ===========================
    Overall Progress
 =========================== */
 
-.progress-section{
+.progress-section {
+    margin-top: 35px;
+}
 
-    margin-top:35px;
+.progress-card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.progress-header h2 {
+    font-size: 28px;
+}
+
+.progress-header span {
+    color: #10B981;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 18px;
+    background: #E5E7EB;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #10B981, #34D399);
+    border-radius: 20px;
+    transition: width 0.5s ease;
+}
+
+.progress-card p {
+    margin-top: 18px;
+    color: #64748B;
+}
+
+/* ===========================
+   Responsive Design
+=========================== */
+
+@media (max-width: 1100px) {
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
 }
 
-.progress-card{
+@media (max-width: 768px) {
 
-    background:white;
+    .dashboard-container {
+        flex-direction: column;
+    }
 
-    padding:30px;
+    .sidebar {
+        width: auto;
+        padding: 20px;
+    }
 
-    border-radius:20px;
+    .sidebar-logo {
+        margin-bottom: 20px;
+    }
 
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    .sidebar-menu {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
 
-}
+    .sidebar-menu li {
+        margin: 0;
+    }
 
-.progress-header{
+    .main-content {
+        padding: 20px;
+    }
 
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    margin-bottom:20px;
-
-}
-
-.progress-header h2{
-
-    font-size:28px;
-
-}
-
-.progress-header span{
-
-    color:#10B981;
-
-    font-size:30px;
-
-    font-weight:700;
-
-}
-
-.progress-bar{
-
-    width:100%;
-
-    height:18px;
-
-    background:#E5E7EB;
-
-    border-radius:20px;
-
-    overflow:hidden;
-
-}
-
-.progress-fill{
-
-    width:72%;
-
-    height:100%;
-
-    background:linear-gradient(90deg,#10B981,#34D399);
-
-    border-radius:20px;
-
-}
-
-.progress-card p{
-
-    margin-top:18px;
-
-    color:#64748B;
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
 
 }
